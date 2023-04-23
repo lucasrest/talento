@@ -1,6 +1,8 @@
 package br.com.opus.talento.model;
 
 import br.com.opus.talento.anotation.DataAPI;
+import br.com.opus.talento.enums.Status;
+import br.com.opus.talento.util.LocalDateTimeUtils;
 import lombok.*;
 
 import javax.persistence.*;
@@ -30,10 +32,10 @@ public class Candidato {
     @Column(nullable = false)
     private LocalDateTime inclusao;
 
-//    @Column
-//    private Integer status = Status.ATIVO.getValue();
+    @Column
+    private Integer status = Status.ATIVO.getValue();
 
-    /*@PrePersist
+    @PrePersist
     public void prePersist() {
         inclusao = LocalDateTimeUtils.dataAtual();
     }
@@ -41,5 +43,5 @@ public class Candidato {
     @PreUpdate
     public void preUpdate() {
         alteracao = LocalDateTimeUtils.dataAtual();
-    }*/
+    }
 }

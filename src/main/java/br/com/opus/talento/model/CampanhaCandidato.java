@@ -1,6 +1,8 @@
 package br.com.opus.talento.model;
 
 import br.com.opus.talento.anotation.DataAPI;
+import br.com.opus.talento.enums.Status;
+import br.com.opus.talento.util.LocalDateTimeUtils;
 import lombok.*;
 
 import javax.persistence.*;
@@ -30,8 +32,8 @@ public class CampanhaCandidato {
     @Column(nullable = false)
     private LocalDateTime inclusao;
 
-//    @Column
-//    private Integer status = Status.ATIVO.getValue();
+    @Column
+    private Integer status = Status.ATIVO.getValue();
 
     @Column(name = "campanha_id")
     private Long campanhaId;
@@ -39,7 +41,7 @@ public class CampanhaCandidato {
     @Column(name = "candidato_id")
     private Long candidatoId;
 
- /*   @PrePersist
+    @PrePersist
     public void prePersist() {
         inclusao = LocalDateTimeUtils.dataAtual();
     }
@@ -47,5 +49,5 @@ public class CampanhaCandidato {
     @PreUpdate
     public void preUpdate() {
         alteracao = LocalDateTimeUtils.dataAtual();
-    }*/
+    }
 }
