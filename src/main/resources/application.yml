@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: talento
+
+server:
+  error:
+    include-exception: false
+    include-stacktrace: NEVER
+  servlet-path: /talento
+  servlet:
+    context-path: /talento
+  port: 8083
+
+db-config:
+  driver-class-name:  org.postgresql.Driver
+  setMinPoolSize: 3
+  setAcquireIncrement: 5
+  setMaxPoolSize: 50
+  setMaxStatements: 180
+  setIdleTimeOut: 30000
+  setConnectionTimeout: 10000
+  setMaxLifeTime: 300000
+

@@ -1,0 +1,7 @@
+db-config:
+  url: jdbc:postgresql://localhost:5432/talento_db
+  username: postgres
+  password: 123456
+spring:
+  jpa:
+    show-sql: true
